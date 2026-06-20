@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Uday Bhaskar Kokkera | Data Analytics Portfolio</title>
 
   <style>
@@ -15,7 +17,7 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f8fafc;
-      color: #1f2937;
+      color: #111827;
       line-height: 1.6;
     }
 
@@ -26,36 +28,48 @@
     .hero {
       background: linear-gradient(135deg, #0f172a, #1e3a8a);
       color: white;
-      padding: 80px 20px;
+      padding: 80px 20px 70px;
     }
 
     .hero-content {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       text-align: center;
     }
 
-    .hero-content h1 {
-      font-size: 46px;
-      margin-bottom: 12px;
-    }
-
-    .hero-content p {
-      font-size: 18px;
-      max-width: 760px;
-      margin: 0 auto 22px;
+    .hero-label {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
       color: #dbeafe;
     }
 
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 820px;
+      margin: 0 auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
     .hero-buttons {
-      margin-top: 20px;
+      margin-top: 28px;
     }
 
     .hero-buttons a {
       display: inline-block;
       margin: 8px;
       padding: 12px 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
       font-size: 14px;
     }
@@ -71,38 +85,69 @@
     }
 
     .container {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 50px 20px;
     }
 
-    .section-title {
-      font-size: 30px;
-      margin-bottom: 18px;
-      color: #111827;
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: -78px;
+      margin-bottom: 50px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
       text-align: center;
+    }
+
+    .stat-card h3 {
+      font-size: 28px;
+      color: #1d4ed8;
+      margin-bottom: 4px;
+    }
+
+    .stat-card p {
+      color: #4b5563;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 10px;
+      color: #111827;
     }
 
     .section-subtitle {
       text-align: center;
+      max-width: 820px;
+      margin: 0 auto 34px;
       color: #4b5563;
-      max-width: 800px;
-      margin: 0 auto 35px;
-      font-size: 16px;
+      font-size: 17px;
     }
 
     .about-box {
       background: white;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      margin-bottom: 50px;
+      border-radius: 20px;
+      padding: 34px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
     }
 
     .about-box p {
-      font-size: 16px;
       color: #374151;
-      margin-bottom: 18px;
+      font-size: 16px;
+      margin-bottom: 20px;
     }
 
     .skills {
@@ -123,42 +168,64 @@
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
+      gap: 30px;
+      align-items: stretch;
     }
 
     .project-card {
       background: white;
-      border-radius: 18px;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
       display: flex;
       flex-direction: column;
-      height: 100%;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 100%;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.14);
     }
 
-    .project-image {
+    .project-cover {
       width: 100%;
-      height: 240px;
-      object-fit: cover;
-      display: block;
-      background: #e5e7eb;
+      height: 260px;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .project-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
     }
 
     .project-content {
-      padding: 24px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
+    .project-type {
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
     .project-content h3 {
-      font-size: 26px;
+      font-size: 25px;
       margin-bottom: 12px;
       color: #111827;
     }
@@ -166,11 +233,11 @@
     .project-content p {
       color: #4b5563;
       font-size: 15px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .project-tags {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     .project-tags span {
@@ -190,8 +257,8 @@
     .project-buttons a {
       display: inline-block;
       margin: 6px 8px 0 0;
-      padding: 10px 16px;
-      border-radius: 8px;
+      padding: 11px 16px;
+      border-radius: 10px;
       font-size: 14px;
       font-weight: bold;
     }
@@ -206,29 +273,70 @@
       color: white;
     }
 
-    footer {
+    .contact-box {
       background: #111827;
+      color: white;
+      border-radius: 22px;
+      padding: 34px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .contact-box h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: #d1d5db;
+      max-width: 760px;
+      margin: 0 auto 22px;
+    }
+
+    .contact-box a {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin: 6px;
+    }
+
+    .contact-box a.secondary {
+      background: white;
+      color: #111827;
+    }
+
+    footer {
+      background: #0f172a;
       color: #d1d5db;
       text-align: center;
-      padding: 28px 20px;
+      padding: 26px 20px;
       margin-top: 50px;
+      font-size: 14px;
     }
 
     footer a {
       color: #93c5fd;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -60px;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-content h1 {
-        font-size: 36px;
+      .hero h1 {
+        font-size: 38px;
       }
 
-      .project-image {
-        height: 220px;
+      .project-cover {
+        height: 250px;
       }
     }
 
@@ -237,16 +345,30 @@
         padding: 60px 18px;
       }
 
-      .hero-content h1 {
-        font-size: 30px;
+      .hero h1 {
+        font-size: 31px;
       }
 
-      .hero-content p {
+      .hero p {
         font-size: 16px;
       }
 
+      .stats-grid {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+      }
+
       .section-title {
-        font-size: 26px;
+        font-size: 28px;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 24px;
+      }
+
+      .project-cover {
+        height: 220px;
       }
 
       .project-content h3 {
@@ -254,124 +376,168 @@
       }
     }
   </style>
+
 </head>
 
 <body>
 
   <header class="hero">
     <div class="hero-content">
+      <div class="hero-label">Data Analytics Portfolio</div>
       <h1>Uday Bhaskar Kokkera</h1>
       <p>
-        Data Analyst focused on Power BI, SQL, business intelligence, financial analytics,
-        and dashboard storytelling. This portfolio showcases projects built to demonstrate
-        practical analytics skills through professional GitHub documentation and visual reporting.
+        Data Analyst focused on Power BI, SQL, financial analytics, business intelligence,
+        and dashboard storytelling. This portfolio showcases practical analytics projects
+        with professional GitHub documentation, dashboards, and project Wikis.
       </p>
 
-      <div class="hero-buttons">
-        <a class="btn-primary" href="https://github.com/udaybhaskar-23" target="_blank">View GitHub</a>
-        <a class="btn-secondary" href="https://github.com/udaybhaskar-23/Live-Stock-Market-Intelligence-Dashboard" target="_blank">Latest Project</a>
-      </div>
-    </div>
+```
+  <div class="hero-buttons">
+    <a class="btn-primary" href="https://github.com/udaybhaskar-23" target="_blank">View GitHub</a>
+    <a class="btn-secondary" href="#projects">View Projects</a>
+  </div>
+</div>
+```
+
   </header>
 
   <main class="container">
 
-    <section class="about-box">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        I am building a portfolio in data analytics and business intelligence with a focus on
-        Power BI dashboards, financial analysis, data transformation, KPI reporting, and project documentation.
-        My goal is to create beginner-to-professional portfolio projects that clearly demonstrate practical skills.
-      </p>
+```
+<section class="stats-grid">
+  <div class="stat-card">
+    <h3>2</h3>
+    <p>Portfolio Projects</p>
+  </div>
+  <div class="stat-card">
+    <h3>2</h3>
+    <p>GitHub Wikis</p>
+  </div>
+  <div class="stat-card">
+    <h3>Power BI</h3>
+    <p>Dashboard Focus</p>
+  </div>
+  <div class="stat-card">
+    <h3>Finance</h3>
+    <p>Analytics Domain</p>
+  </div>
+</section>
 
-      <div class="skills">
-        <span class="skill">Power BI</span>
-        <span class="skill">Power Query</span>
-        <span class="skill">DAX</span>
-        <span class="skill">SQL</span>
-        <span class="skill">Excel</span>
-        <span class="skill">Financial Analysis</span>
-        <span class="skill">Business Intelligence</span>
-        <span class="skill">GitHub</span>
+<section class="section">
+  <div class="about-box">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am building a portfolio in data analytics and business intelligence with a focus on
+      Power BI dashboards, financial analysis, data transformation, KPI reporting, and project documentation.
+      My goal is to create beginner-to-professional portfolio projects that clearly demonstrate practical skills.
+    </p>
+
+    <div class="skills">
+      <span class="skill">Power BI</span>
+      <span class="skill">Power Query</span>
+      <span class="skill">DAX</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Excel</span>
+      <span class="skill">Financial Analysis</span>
+      <span class="skill">Business Intelligence</span>
+      <span class="skill">GitHub</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <p class="section-subtitle">
+    Portfolio projects showcasing financial analysis, Power BI dashboards, interactive reporting,
+    data transformation, and GitHub-based project presentation.
+  </p>
+
+  <div class="projects-grid">
+
+    <article class="project-card">
+      <div class="project-cover">
+        <img
+          src="https://raw.githubusercontent.com/udaybhaskar-23/Apple-Financial-Analysis/main/visuals/revenue_trend.png"
+          alt="Apple Financial Analysis project cover"
+        />
       </div>
-    </section>
 
-    <section>
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">
-        Portfolio projects showcasing financial analysis, Power BI dashboards, interactive reporting,
-        and GitHub-based project presentation.
-      </p>
+      <div class="project-content">
+        <div class="project-type">Financial Analysis Project</div>
+        <h3>Apple Financial Analysis</h3>
+        <p>
+          Financial analysis project focused on Apple’s revenue trends, profitability,
+          business segment performance, and overall financial storytelling using structured documentation and visuals.
+        </p>
 
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <img
-            class="project-image"
-            src="https://raw.githubusercontent.com/udaybhaskar-23/Apple-Financial-Analysis/main/visuals/revenue_trend.png"
-            alt="Apple Financial Analysis"
-          />
-
-          <div class="project-content">
-            <h3>Apple Financial Analysis</h3>
-            <p>
-              Financial analysis project focused on Apple’s revenue trends, profitability,
-              business segment performance, and overall financial storytelling using structured documentation and visuals.
-            </p>
-
-            <div class="project-tags">
-              <span>Financial Analysis</span>
-              <span>Excel</span>
-              <span>Power BI</span>
-              <span>GitHub</span>
-            </div>
-
-            <div class="project-buttons">
-              <a class="project-btn-primary" href="https://github.com/udaybhaskar-23/Apple-Financial-Analysis" target="_blank">View Project</a>
-              <a class="project-btn-secondary" href="https://github.com/udaybhaskar-23/Apple-Financial-Analysis/wiki" target="_blank">Project Wiki</a>
-            </div>
-          </div>
+        <div class="project-tags">
+          <span>Financial Analysis</span>
+          <span>Excel</span>
+          <span>Power BI</span>
+          <span>GitHub</span>
         </div>
 
-        <div class="project-card">
-          <img
-            class="project-image"
-            src="https://raw.githubusercontent.com/udaybhaskar-23/Live-Stock-Market-Intelligence-Dashboard/main/images/dashboard_overview.png"
-            alt="Live Stock Market Intelligence Dashboard"
-          />
+        <div class="project-buttons">
+          <a class="project-btn-primary" href="https://github.com/udaybhaskar-23/Apple-Financial-Analysis" target="_blank">View Project</a>
+          <a class="project-btn-secondary" href="https://github.com/udaybhaskar-23/Apple-Financial-Analysis/wiki" target="_blank">Project Wiki</a>
+        </div>
+      </div>
+    </article>
 
-          <div class="project-content">
-            <h3>Live Stock Market Intelligence Dashboard</h3>
-            <p>
-              API-connected Power BI dashboard analyzing stock price trends, trading volume,
-              intraday returns, risk indicators, and multi-company comparison across
-              AAPL, AMZN, MSFT, NVDA, and TSLA.
-            </p>
+    <article class="project-card">
+      <div class="project-cover">
+        <img
+          src="https://raw.githubusercontent.com/udaybhaskar-23/Live-Stock-Market-Intelligence-Dashboard/main/images/dashboard_overview.png"
+          alt="Live Stock Market Intelligence Dashboard project cover"
+        />
+      </div>
 
-            <div class="project-tags">
-              <span>Power BI</span>
-              <span>Power Query</span>
-              <span>DAX</span>
-              <span>Yahoo Finance API</span>
-              <span>Dashboard</span>
-            </div>
+      <div class="project-content">
+        <div class="project-type">Power BI Dashboard Project</div>
+        <h3>Live Stock Market Intelligence Dashboard</h3>
+        <p>
+          API-connected Power BI dashboard analyzing stock price trends, trading volume,
+          intraday returns, risk indicators, and multi-company comparison across
+          AAPL, AMZN, MSFT, NVDA, and TSLA.
+        </p>
 
-            <div class="project-buttons">
-              <a class="project-btn-primary" href="https://github.com/udaybhaskar-23/Live-Stock-Market-Intelligence-Dashboard" target="_blank">View Project</a>
-              <a class="project-btn-secondary" href="https://github.com/udaybhaskar-23/Live-Stock-Market-Intelligence-Dashboard/wiki" target="_blank">Project Wiki</a>
-            </div>
-          </div>
+        <div class="project-tags">
+          <span>Power BI</span>
+          <span>Power Query</span>
+          <span>DAX</span>
+          <span>Yahoo Finance API</span>
+          <span>Dashboard</span>
         </div>
 
+        <div class="project-buttons">
+          <a class="project-btn-primary" href="https://github.com/udaybhaskar-23/Live-Stock-Market-Intelligence-Dashboard" target="_blank">View Project</a>
+          <a class="project-btn-secondary" href="https://github.com/udaybhaskar-23/Live-Stock-Market-Intelligence-Dashboard/wiki" target="_blank">Project Wiki</a>
+        </div>
       </div>
-    </section>
+    </article>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="contact-box">
+    <h2>Let’s Connect</h2>
+    <p>
+      Explore my GitHub projects, documentation, dashboards, and project Wikis.
+      More analytics projects will be added as I continue building my portfolio.
+    </p>
+
+    <a href="https://github.com/udaybhaskar-23" target="_blank">GitHub Profile</a>
+    <a class="secondary" href="https://github.com/udaybhaskar-23?tab=repositories" target="_blank">View Repositories</a>
+  </div>
+</section>
+```
 
   </main>
 
   <footer>
     <p>© 2026 Uday Bhaskar Kokkera</p>
     <p>
-      GitHub:
       <a href="https://github.com/udaybhaskar-23" target="_blank">github.com/udaybhaskar-23</a>
     </p>
   </footer>
